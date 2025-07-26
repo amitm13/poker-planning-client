@@ -76,9 +76,9 @@ const Profile = () => {
           {error && <Alert severity="error" sx={{ mb: 2 }}>{error}</Alert>}
           {success && <Alert severity="success" sx={{ mb: 2 }}>{success}</Alert>}
 
-          <Box component="form" onSubmit={handleSubmit}>
+        <Box component="form" onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
+              <Grid item xs={12} fullWidth>
                 <TextField
                   required
                   fullWidth
@@ -101,11 +101,13 @@ const Profile = () => {
                   disabled
                 />
               </Grid>
-              <Grid item xs={12}>
-                <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
-                  Change Password
+            </Grid>
+            <Box sx={{ textAlign: 'center', mb: 3, mt: 2 }}>
+                <Typography variant="h4" component="h1">
+                Change Password
                 </Typography>
-              </Grid>
+            </Box>
+            <Grid container spacing={2} sx={{ mt: 2 }}>
               <Grid item xs={12}>
                 <TextField
                   fullWidth

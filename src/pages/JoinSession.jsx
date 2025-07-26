@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate, Link as RouterLink } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -13,8 +14,9 @@ import {
 } from '@mui/material';
 
 const JoinSession = () => {
-  const [sessionId, setSessionId] = useState('');
-  const [availableSessions, setAvailableSessions] = useState([
+    const navigate = useNavigate();
+    const [sessionId, setSessionId] = useState('');
+    const [availableSessions, setAvailableSessions] = useState([
     // TODO: Replace with real data
     { id: '1', name: 'Sprint Planning 1', owner: 'John Doe' },
     { id: '2', name: 'Backlog Refinement', owner: 'Jane Smith' },
@@ -23,6 +25,7 @@ const JoinSession = () => {
   const handleJoinByCode = (e) => {
     e.preventDefault();
     // TODO: Implement join by code logic
+    navigate('/session/' + sessionId);
     console.log('Joining session:', sessionId);
   };
 
