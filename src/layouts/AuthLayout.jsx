@@ -11,7 +11,7 @@ const AuthLayout = () => {
         bgcolor: 'background.default',
       }}
     >
-      <Container maxWidth="sm">
+      <Container sx={{width: '100%'}}>
         <Outlet />
       </Container>
     </Box>

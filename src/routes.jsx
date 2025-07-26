@@ -16,6 +16,7 @@ import SessionRoom from './pages/SessionRoom';
 import Profile from './pages/Profile';
 import SessionHistory from './pages/SessionHistory';
 import NotFound from './pages/NotFound';
+import LandingPage from './pages/LandingPage';
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
@@ -27,6 +28,7 @@ const AppRoutes = () => {
     <Routes>
       {/* Auth routes */}
       <Route element={<AuthLayout />}>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/reset-password" element={<ResetPassword />} />
@@ -34,7 +36,7 @@ const AppRoutes = () => {
 
       {/* Protected routes */}
       <Route element={<PrivateRoute><MainLayout /></PrivateRoute>}>
-        <Route path="/" element={<Home />} />
+        <Route path="/dashboard" element={<Home />} />
         <Route path="/create-session" element={<CreateSession />} />
         <Route path="/join-session" element={<JoinSession />} />
         <Route path="/session/:id" element={<SessionRoom />} />
