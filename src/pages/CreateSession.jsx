@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -38,9 +39,13 @@ const CreateSession = () => {
   };
 
   const handleSubmit = (e) => {
+    const navigate = useNavigate();
     e.preventDefault();
-    // TODO: Implement session creation logic
+    // TODO: Implement session creation logic with backend
     console.log(sessionData);
+    // For now, navigate to a new session with a random ID
+    const sessionId = Math.random().toString(36).substr(2, 9);
+    navigate(`/session/${sessionId}`);
   };
 
   return (
