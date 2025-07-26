@@ -9,6 +9,7 @@ import {
   Grid,
   Card,
   CardContent,
+  Stack
 } from '@mui/material';
 import { useSession } from '../contexts/SessionContext';
 
@@ -68,11 +69,12 @@ const VotingControls = () => {
 
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <Box spacing={2} sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
+          <Stack direction="row" spacing={1}>
             <Button
               variant="contained"
               onClick={toggleReveal}
               disabled={Object.keys(votes).length === 0}
+              spacing={2}
             >
               {isRevealed ? 'Hide Votes' : 'Reveal Votes'}
             </Button>
@@ -83,7 +85,7 @@ const VotingControls = () => {
             >
               Start Timer (60s)
             </Button>
-          </Box>
+          </Stack>
         </Grid>
 
         <Grid item xs={12}>
