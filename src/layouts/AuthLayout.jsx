@@ -9,9 +9,11 @@ const AuthLayout = () => {
         display: 'flex',
         alignItems: 'center',
         bgcolor: 'background.default',
+        minWidth: '100%',
+        padding: 0,
       }}
     >
-      <Container sx={{width: '100%'}}>
+      <Container sx={{minWidth: '100%', padding: 0}}>
         <Outlet />
       </Container>
     </Box>

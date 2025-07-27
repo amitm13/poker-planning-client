@@ -18,6 +18,7 @@ import {
   GitHub,
   ArrowForward,
 } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -40,12 +41,13 @@ const features = [
 const LandingPage = () => {
   return (
     <Box sx={{
-      backgroundColor: '#0e101c',
+      // backgroundColor: '#0e101c',
+      backgroundColor: '#0425e4ff',
       color: 'white',
       width: '100%',
       minHeight: '100vh',
       margin: 0,
-      padding: 0,
+      padding: '0 !important',
       overflowX: 'hidden'
     }}>
       {/* Navbar */}
@@ -58,14 +60,16 @@ const LandingPage = () => {
         }}
       >
         <Toolbar sx={{ width: '100%', px: { xs: 4, md: 8 } }}>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            🚀 Story Poker
-          </Typography>
+          <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>
+              🚀 Story Poker
+            </Typography>
+          </Link>
           <Button
             variant="outlined"
             color="secondary"
             href="#get-started"
-            sx={{ px: 4 }}
+            sx={{ px: 4, float: 'right', marginLeft: '10px' }}
           >
             Get Started
           </Button>
@@ -75,7 +79,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <Box
         sx={{
-         
+          paddingTop: '64px', // Adjust for fixed navbar height
           minHeight: '100vh',
           background: 'linear-gradient(to right, #1f1f2f, #2b2b40)',
           display: 'flex',
@@ -90,7 +94,7 @@ const LandingPage = () => {
           mx: 'auto',
           px: { xs: 3, md: 8, lg: 12 }
         }}>
-          <Grid container spacing={6} alignItems="center">
+          <Grid container sx={{ marginTop: '100px'}} spacing={6} alignItems="center">
             <Grid item xs={12} md={12} lg={6} >
               <Typography variant="h2" gutterBottom sx={{ fontWeight: 700 }}>
                 Agile Estimation<br /> Made Beautiful
@@ -117,7 +121,7 @@ const LandingPage = () => {
             <Grid item xs={12} md={6}>
               <Box
                 component="img"
-                src="https://via.placeholder.com/800x500?text=App+Screenshot"
+                src="https://placehold.co/800x400/000000/FFF"
                 alt="App UI"
                 sx={{
                   width: '100%',
@@ -154,7 +158,7 @@ const LandingPage = () => {
           </Typography>
           <Grid container spacing={4}>
             {features.map((feature, i) => (
-              <Grid item xs={12} md={4} key={i}>
+              <Grid item xs={12} md={3} key={i}>
                 <Card
                   sx={{
                     backgroundColor: 'rgba(255,255,255,0.05)',
@@ -205,7 +209,7 @@ const LandingPage = () => {
             Start your first story poker session in less than 60 seconds.
           </Typography>
           <Button variant="contained" size="large" color="secondary">
-            Launch App
+            Sign Up Now
           </Button>
         </Box>
       </Box>
